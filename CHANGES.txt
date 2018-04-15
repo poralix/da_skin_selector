@@ -1,0 +1,80 @@
+##############################################################################
+#
+#                 SKIN SELECTOR PLUGIN FOR DIRECTADMIN $ v.0.10
+#
+#    Copyright (C) 2014-2016  Alex S Grebenschikov
+#            web-site:  www.plugins-da.net
+#            emails to: support@plugins-da.net
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#############################################################################
+
+Version 0.10.4 released on 05.03.2016
+  + An icon added for plugin to display on home pages with image based navigation (thanks to bit)
+
+Version 0.10.3 released on 03.03.2016
+  + A preview added for Capri-master skin
+
+Version 0.10.2 released on 03.03.2016
+  + Installation script fixes
+  + Hooks added for skins with image based navigation
+
+Version 0.10 released on 13.12.2015
+
+  + Added feature to enable/disable plugin per user or per user's package bases at reseller 
+    level via Directadmin interface, i.e. edit user's or package details
+
+Version 0.8 released on 22.09.2014
+
+  + Reseller level added. Reseller can do the following:
+        + upload previews for private templates/skins
+        + set allowed serverwide skins as hidden (hidden skins are not shown at user level of 
+          the plugin)
+        + set private skins as hidden (hidden skins are not shown at user level of the plugin)
+        +set and change short description of a private skin
+
+Version 0.7 released on 06.09.2014
+
+  + Admin level added. Admin can do the following:
+        + upload previews for serverwide templates/skins
+        + set any serverwide skin as hidden (hidden skins are not shown at user level of the plugin)
+        + set and change short description of a serverwide skin
+        + change plugins settings: hide/unhide standart collections (serverwide skins), hide/unhide 
+          private collections (resellers` skins), disable/enable plugin logs
+        + see plugins logs
+
+   + User level:
+        + fixed bug when a reseller/admin could not see their own skin collection on user level.
+        + short description of a serverwide skin available on mouseover (1s delay)
+
+Version 0.5 released on 28.08.2014
+
+   + Completely new looking:
+        + No more selects, and submit buttons, new stylish previews with an ability to click on them 
+          to choose a skin.
+        + Supports both server's collection and reseller's collection of skins. 
+        + Users are allowed to choose a skin from a server and their reseller collections.
+
+   + Access, Error, Debug logging 
+   + Three log files are at your service to make it easier to work with the plugin.
+
+Version 0.3 released on 26.08.2014
+
+   + Multiple languages support was added
+   + Additional check for skin was added
+   + Submit button added, onChange action was removed from select element of a form.
+
+Version 0.2 released on 27.07.2014
+
