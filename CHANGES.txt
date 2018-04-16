@@ -21,7 +21,7 @@
 #
 #############################################################################
 
-Version 0.10.4 released on 05.03.2016
+Version 0.10.5 released on 05.03.2016
   + An icon added for plugin to display on home pages with image based navigation (thanks to bit)
 
 Version 0.10.3 released on 03.03.2016

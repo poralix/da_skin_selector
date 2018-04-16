@@ -36,8 +36,8 @@ $username=$px_Skin_Selector->get_username();
 // Resellers, admins are allowed to run this script
 //
 if (($usertype !== "reseller") and ($usertype !== "admin")) {
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Content-Type: application/javascript\n\n");
     print json_encode(array('result'=>false,'error'=>'not admin (Usertype='.$usertype.')'));
     exit;
 }
@@ -84,8 +84,8 @@ if (($type=="ajax") && ($do == "skins"))
             $_res=$px_Skin_Selector->save_description($description, $skin, $collection);
         }
     }
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Content-Type: application/javascript\n\n");
     if ($_res) {
         print json_encode(array('result'=>true));
     } else {
@@ -104,8 +104,8 @@ else if (($type == "ajax") && ($do == "upload")) {
     $collection=$px_Skin_Selector->get_var_get("collection", false);
     $file=$px_Skin_Selector->get_var_post(0,false);
 
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Content-Type: application/javascript\n\n");
 
     if (!$skin || !$collection || !$file) {
         print json_encode(array('result'=>false,'error'=>"No data sent"));
@@ -184,8 +184,8 @@ else if (($type == "ajax") && ($do == "upload")) {
         rename($fullpath_filename."~old", $fullpath_filename);
     }
 
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Content-Type: application/javascript\n\n");
 
     if ($px_Skin_Selector->get_last_error()) {
         print json_encode(array('result'=>false,'error'=>$px_Skin_Selector->get_last_error()));

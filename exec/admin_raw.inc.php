@@ -22,6 +22,7 @@
 #
 #############################################################################
 
+ini_set('display_errors',0);
 error_reporting(0);
 if(!defined("IN_DA_PLUGIN_ADMIN")){die("You're not allowed to run this programm!");}
 require_once("/usr/local/directadmin/plugins/da_skin_selector/exec/functions.inc.php");
@@ -30,13 +31,13 @@ $px_Skin_Selector = new px_Skin_Selector(ADMIN_LEVEL);
 
 $usertype=$px_Skin_Selector->get_user_data('usertype');
 
-
 //
 // Admin is the only user who is allowed to run this script
 //
 if ($usertype !== "admin") {
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Cache-Control: no-cache, must-revalidate\n");
+    print("Content-type: application/json\n\n");
     print json_encode(array('result'=>false,'error'=>'not admin (Usertype='.$usertype.')'));
     exit;
 }
@@ -58,13 +59,13 @@ if ($type == "logs") {
     $file=basename($file);
     $ctype="plain/text";
     $filename=PLUGIN_LOGS_DIR."/".$file;
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: ".$ctype."\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Content-Type: ".$ctype."\n\n");
     if (is_file($filename)) {
         $filesize=filesize($filename);
-        header("Content-Length: ". $filesize);
-        header("Last-Modified: ".gmdate('D, d M Y H:i:s', filemtime($filename))." GMT\n");
-        header("Cache-Control: public, max-age=2592000\n");
+        print("Content-Length: ". $filesize);
+        print("Last-Modified: ".gmdate('D, d M Y H:i:s', filemtime($filename))." GMT\n");
+        print("Cache-Control: public, max-age=2592000\n");
         readfile($filename);
     }
     echo "\n";
@@ -90,8 +91,10 @@ else if (($type == "ajax") && ($do == "settings")) {
 
     $_res = $px_Skin_Selector->save_custom_confs(strtoupper($option), $value);
 
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Cache-Control: no-cache, must-revalidate\n");
+    print("Content-type: application/json\n\n");
+
     if ($_res) {
         print json_encode(array('result'=>true));
     } else {
@@ -110,8 +113,9 @@ else if (($type == "ajax") && ($do == "upload")) {
     $collection=$px_Skin_Selector->get_var_get("collection", false);
     $file=$px_Skin_Selector->get_var_post(0,false);
 
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Cache-Control: no-cache, must-revalidate\n");
+    print("Content-type: application/json\n\n");
 
     if (!$skin || !$collection || !$file) {
         print json_encode(array('result'=>false,'error'=>"No data sent"));
@@ -187,9 +191,6 @@ else if (($type == "ajax") && ($do == "upload")) {
         rename($fullpath_filename."~old", $fullpath_filename);
     }
 
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
-
     if ($px_Skin_Selector->get_last_error()) {
         print json_encode(array('result'=>false,'error'=>$px_Skin_Selector->get_last_error()));
     } else {
@@ -223,8 +224,9 @@ else if (($type == "ajax") && ($do == "skins")) {
             $_res=$px_Skin_Selector->save_description($description, $skin, $collection);
         }
     }
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: application/javascript\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Cache-Control: no-cache, must-revalidate\n");
+    print("Content-type: application/json\n\n");
     if ($_res) {
         print json_encode(array('result'=>true));
     } else {

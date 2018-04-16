@@ -44,10 +44,10 @@ if ($type == "image") {
         }
     }
     $filesize=filesize($filename);
-    header("HTTP/1.1 200 OK\n");
-    header("Content-Type: ".$ctype."\n");
-    header("Content-Length: ". $filesize);
-    header("Last-Modified: ".gmdate('D, d M Y H:i:s', filemtime($filename))." GMT\n");
-    header("Cache-Control: public, max-age=2592000\n");
+    print("HTTP/1.1 200 OK\n");
+    print("Content-Type: ".$ctype."\n");
+    print("Content-Length: ". $filesize. "\n");
+    print("Last-Modified: ".gmdate('D, d M Y H:i:s', filemtime($filename))." GMT\n");
+    print("Cache-Control: public, max-age=2592000\n\n");
     readfile($filename);
 }

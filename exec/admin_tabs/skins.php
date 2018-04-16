@@ -1,7 +1,7 @@
 <?php
 ##############################################################################
 #
-#                 SKIN SELECTOR PLUGIN FOR DIRECTADMIN $ v.0.10.4
+#                 SKIN SELECTOR PLUGIN FOR DIRECTADMIN $ v.0.10.5
 #
 #    Copyright (C) 2014-2016  Alex S Grebenschikov
 #            web-site:  www.plugins-da.net
