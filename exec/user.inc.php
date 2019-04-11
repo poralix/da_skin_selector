@@ -54,10 +54,12 @@ if ($save_skin && $save_collection && (in_array($save_skin,$list_skins['server']
     $cmd=PLUGIN_EXEC_DIR."/php-forker ".$px_Skin_Selector->get_username()." ".$save_collection." ".$save_skin;
     $res=@exec($cmd, $output, $return);
     do_output("<br><br><center>".$px_Skin_Selector->get_lang('SKIN_WAS_CHANGED_TO')." $save_skin!</b>");
-    do_output("<br><a href='/CMD_SHOW_DOMAIN?domain=".$_SERVER['SESSION_SELECTED_DOMAIN']."'>".$px_Skin_Selector->get_lang('WILL_BE_REDIRECTED_NOW')."</a><br><br><a href='?'>".$px_Skin_Selector->get_lang('CHOOSE_ANOTHER_SKIN')."</a>.</center><br><br>");
+    do_output("<br><a href=\"/CMD_SHOW_DOMAIN?domain=".$_SERVER['SESSION_SELECTED_DOMAIN']."\" target=\"_top\">".$px_Skin_Selector->get_lang('WILL_BE_REDIRECTED_NOW')."</a><br><br><a href=\"?\" target=\"_top\">".$px_Skin_Selector->get_lang('CHOOSE_ANOTHER_SKIN')."</a>.</center><br><br>");
     do_output("<script type='text/javascript'>\n");
     do_output("<!--\n");
-    do_output("function _px_redirect() { location.href=\"/CMD_SHOW_DOMAIN?domain=".$_SERVER['SESSION_SELECTED_DOMAIN']."\"; }\n");
+    do_output("function _px_redirect() { top.location.href=\"/");
+    if ($_SERVER['SESSION_SELECTED_DOMAIN']) do_output("CMD_SHOW_DOMAIN?domain=".$_SERVER['SESSION_SELECTED_DOMAIN']);
+    do_output("\"; }\n");
     do_output("setTimeout('_px_redirect();', 3*1000);\n");
     do_output("//-->\n");
     do_output("</script>\n");
