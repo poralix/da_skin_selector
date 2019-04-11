@@ -32,6 +32,6 @@ $content=<<<EOF
 <p>Plugin Homepage:&nbsp;<a href="https://www.plugins-da.net/workshop/skin-selector-for-directadmin" target="_blank">Visit</a></p>
 <p>Requires DirectAdmin: v.1.453&nbsp;and newer, JavaScripts enabled.</p>
 <p>Supported Operating Systems: RHEL/CentOS, Debian/Ubuntu</p>
-<p>Licensed under:&nbsp;<a href="info/licenses/gnu-gpl-v3/">GNU GENERAL PUBLIC LICENSE</a></p>
+<p>Licensed under:&nbsp;GNU GENERAL PUBLIC LICENSE</p>
 <p>Download link:&nbsp;<a href="http://files.plugins-da.net/dl/da_skin_selector.tar.gz" target="_blank">http://files.plugins-da.net/dl/da_skin_selector.tar.gz</a></p>
 EOF;

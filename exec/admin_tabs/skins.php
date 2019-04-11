@@ -1,7 +1,7 @@
 <?php
 ##############################################################################
 #
-#                 SKIN SELECTOR PLUGIN FOR DIRECTADMIN $ v.0.10.5
+#                 SKIN SELECTOR PLUGIN FOR DIRECTADMIN $ v.0.10.6
 #
 #    Copyright (C) 2014-2016  Alex S Grebenschikov
 #            web-site:  www.plugins-da.net
@@ -26,7 +26,7 @@ if(!defined("IN_DA_PLUGIN_ADMIN")){die("You're not allowed to run this programm!
 
 $list_skins=$px_Skin_Selector->list_server_skins(true);
 $HTML_title=$px_Skin_Selector->get_lang('SKIN_PREVIEWS_MANAGER');
-$HTML_skin_manager="<div><a href='/CMD_SKINS'>".$px_Skin_Selector->get_lang('SKIN_MANAGER')."</a></div>";
+$HTML_skin_manager="<div><a href=\"/CMD_SKINS\" target=\"_top\">".$px_Skin_Selector->get_lang('SKIN_MANAGER')."</a></div>";
 
 $HTML_result = "";
 $s = 0;

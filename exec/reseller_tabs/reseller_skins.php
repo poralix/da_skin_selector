@@ -30,7 +30,7 @@ $username = $px_Skin_Selector->get_username();
 
 $list_skins=$px_Skin_Selector->list_reseller_skins($username,true);
 $HTML_title=$px_Skin_Selector->get_lang('SKIN_PREVIEWS_MANAGER');
-$HTML_skin_manager="<div><a href='/CMD_SKINS'>".$px_Skin_Selector->get_lang('SKIN_MANAGER')."</a></div>";
+$HTML_skin_manager="<div><a href=\"/CMD_SKINS\" target=\"_top\">".$px_Skin_Selector->get_lang('SKIN_MANAGER')."</a></div>";
 
 $HTML_result = "";
 $s = 0;

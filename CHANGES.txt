@@ -21,6 +21,10 @@
 #
 #############################################################################
 
+Version 0.10.6 released on 12.04.2019
+  + An icon added for Evolution skin
+  + Fixed target location of links
+
 Version 0.10.5 released on 05.03.2016
   + An icon added for plugin to display on home pages with image based navigation (thanks to bit)
 

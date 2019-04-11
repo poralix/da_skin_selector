@@ -23,7 +23,7 @@
 #############################################################################
 
 define("PLUGIN_NAME","Skin Selector for Directadmin");
-define("PLUGIN_VERSION","v.0.10.5");
+define("PLUGIN_VERSION","v.0.10.6");
 define("PLUGIN_RESELLER_TABS_DIR","/usr/local/directadmin/plugins/da_skin_selector/exec/reseller_tabs");
 define("PLUGIN_ADMIN_TABS_DIR","/usr/local/directadmin/plugins/da_skin_selector/exec/admin_tabs");
 define("PLUGIN_DESC_DATA_DIR","/usr/local/directadmin/plugins/da_skin_selector/data/description");

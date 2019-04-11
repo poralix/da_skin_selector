@@ -57,9 +57,7 @@ if ($save_skin && $save_collection && (in_array($save_skin,$list_skins['server']
     do_output("<br><a href=\"/CMD_SHOW_DOMAIN?domain=".$_SERVER['SESSION_SELECTED_DOMAIN']."\" target=\"_top\">".$px_Skin_Selector->get_lang('WILL_BE_REDIRECTED_NOW')."</a><br><br><a href=\"?\" target=\"_top\">".$px_Skin_Selector->get_lang('CHOOSE_ANOTHER_SKIN')."</a>.</center><br><br>");
     do_output("<script type='text/javascript'>\n");
     do_output("<!--\n");
-    do_output("function _px_redirect() { top.location.href=\"/");
-    if ($_SERVER['SESSION_SELECTED_DOMAIN']) do_output("CMD_SHOW_DOMAIN?domain=".$_SERVER['SESSION_SELECTED_DOMAIN']);
-    do_output("\"; }\n");
+    do_output("function _px_redirect() { top.location.href=\"/" . (($_SERVER['SESSION_SELECTED_DOMAIN']) ? ("CMD_SHOW_DOMAIN?domain=".$_SERVER['SESSION_SELECTED_DOMAIN']) : "") ."\"; }\n");
     do_output("setTimeout('_px_redirect();', 3*1000);\n");
     do_output("//-->\n");
     do_output("</script>\n");

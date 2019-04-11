@@ -26,7 +26,7 @@ if(!defined("IN_DA_PLUGIN_RESELLER")){die("You're not allowed to run this progra
 
 $list_skins=$px_Skin_Selector->list_server_skins(true);
 $HTML_title=$px_Skin_Selector->get_lang('SKIN_PREVIEWS_MANAGER');
-$HTML_skin_manager="<div><a href='/CMD_SKINS'>".$px_Skin_Selector->get_lang('SKIN_MANAGER')."</a></div>";
+$HTML_skin_manager="<div><a href=\"/CMD_SKINS\" target=\"_top\">".$px_Skin_Selector->get_lang('SKIN_MANAGER')."</a></div>";
 
 $HTML_result = "";
 $s = 0;
