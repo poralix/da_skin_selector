@@ -6,10 +6,9 @@ A plugin for Directadmin
 
 - Written by Alex S Grebenschikov
 
-# Copyright (C) 2014-2016  Alex S Grebenschikov
+# Copyright 
 
-- web-site:  www.plugins-da.net
-
+- (C) 2014-2016  Alex S Grebenschikov
 
 # Admin may:
 
