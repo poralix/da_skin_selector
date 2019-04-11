@@ -2,3 +2,5 @@ data/custom/settings.php
 logs/*_log-*
 logs/*_log
 plugin.tar.gz
+exec/php-forker
+exec/move-uploaded-file
